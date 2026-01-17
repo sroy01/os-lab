@@ -105,3 +105,21 @@ administrator@administrator-VirtualBox:~/Downloads$ nano os.txt
 administrator@administrator-VirtualBox:~/Downloads$ cat os.txt
 Hello SR
 administrator@administrator-VirtualBox:~/Downloads$ 
+administrator@administrator-VirtualBox:~/Downloads$ touch ~/Documents/test/demo.txt
+administrator@administrator-VirtualBox:~/Downloads$ ls
+ b1   b3   b5         'Hello SR'   osK1     sample.txt
+ b2   b4  'Hello PC'   ok          os.txt
+administrator@administrator-VirtualBox:~/Downloads$ cd Documents
+bash: cd: Documents: No such file or directory
+administrator@administrator-VirtualBox:~/Downloads$ mkdir A{a..5}
+administrator@administrator-VirtualBox:~/Downloads$ ls
+ A{a..5}   b2   b4  'Hello PC'   ok     os.txt
+ b1        b3   b5  'Hello SR'   osK1   sample.txt
+administrator@administrator-VirtualBox:~/Downloads$ rm sample.txt
+administrator@administrator-VirtualBox:~/Downloads$ ls
+ A{a..5}   b1   b2   b3   b4   b5  'Hello PC'  'Hello SR'   ok   osK1   os.txt
+administrator@administrator-VirtualBox:~/Downloads$ rm -r b2
+administrator@administrator-VirtualBox:~/Downloads$ rmdir ~/Documents/test
+rmdir: failed to remove '/home/administrator/Documents/test': Directory not empty
+administrator@administrator-VirtualBox:~/Downloads$ rm ~/Documents/demo.txt
+administrator@administrator-VirtualBox:~/Downloads$ 
