@@ -1,0 +1,238 @@
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+administrator@administrator-VirtualBox:~$ cd Downloads
+administrator@administrator-VirtualBox:~/Downloads$ mkdir osK1
+administrator@administrator-VirtualBox:~/Downloads$ ls
+osK1
+administrator@administrator-VirtualBox:~/Downloads$ cp -r ~/Documents
+cp: missing destination file operand after '/home/administrator/Documents'
+Try 'cp --help' for more information.
+administrator@administrator-VirtualBox:~/Downloads$ cd osK1
+administrator@administrator-VirtualBox:~/Downloads/osK1$ touch a.txt
+administrator@administrator-VirtualBox:~/Downloads/osK1$ cd ../
+administrator@administrator-VirtualBox:~/Downloads$ cp -r osK1 ~/Documents/a.txt ~/Desktop
+administrator@administrator-VirtualBox:~/Downloads$ mv osK1 ~/Music
+administrator@administrator-VirtualBox:~/Downloads$ touch os.txt
+administrator@administrator-VirtualBox:~/Downloads$ nano os.txt
+administrator@administrator-VirtualBox:~/Downloads$ head os.txt
+SR 
+DIU CSE 65
+spring 2026
+65_K1
+Line 
+Line
+administrator@administrator-VirtualBox:~/Downloads$ head -3 os/.txt
+head: cannot open 'os/.txt' for reading: No such file or directory
+administrator@administrator-VirtualBox:~/Downloads$ head -3 os.txt
+SR 
+DIU CSE 65
+spring 2026
+administrator@administrator-VirtualBox:~/Downloads$ tail os.txt
+SR 
+DIU CSE 65
+spring 2026
+65_K1
+Line 
+Line
+administrator@administrator-VirtualBox:~/Downloads$  tail -2 os.txt
+Line 
+Line
+administrator@administrator-VirtualBox:~/Downloads$ sort os.txt
+65_K1
+DIU CSE 65
+Line
+Line 
+spring 2026
+SR 
+administrator@administrator-VirtualBox:~/Downloads$ sort -r os.txt
+SR 
+spring 2026
+Line 
+Line
+DIU CSE 65
+65_K1
+administrator@administrator-VirtualBox:~/Downloads$ sudo apt -install vim
+[sudo] password for administrator: 
+E: Command line option 'i' [from -install] is not understood in combination with the other options.
+administrator@administrator-VirtualBox:~/Downloads$ nl os.txt
+     1	SR 
+     2	DIU CSE 65
+     3	spring 2026
+     4	65_K1
+     5	Line 
+     6	Line
+administrator@administrator-VirtualBox:~/Downloads$ nl -s '>' os.txt
+     1>SR 
+     2>DIU CSE 65
+     3>spring 2026
+     4>65_K1
+     5>Line 
+     6>Line
+administrator@administrator-VirtualBox:~/Downloads$ nl -s '. ' os.txt
+     1. SR 
+     2. DIU CSE 65
+     3. spring 2026
+     4. 65_K1
+     5. Line 
+     6. Line
+administrator@administrator-VirtualBox:~/Downloads$ nl -w 5 os.txt
+    1	SR 
+    2	DIU CSE 65
+    3	spring 2026
+    4	65_K1
+    5	Line 
+    6	Line
+administrator@administrator-VirtualBox:~/Downloads$ wc os.txt
+ 6  9 44 os.txt
+administrator@administrator-VirtualBox:~/Downloads$ wc -w os.txt
+9 os.txt
+administrator@administrator-VirtualBox:~/Downloads$ cat a.txt
+cat: a.txt: No such file or directory
+administrator@administrator-VirtualBox:~/Downloads$ cat sr.txt
+SR 
+DIU CSE 65
+spring 2026
+65_K1
+Line 
+Line
+administrator@administrator-VirtualBox:~/Downloads$ cut -c 1 sr.txt
+S
+D
+s
+6
+L
+L
+administrator@administrator-VirtualBox:~/Downloads$ cut -c 1-5 sr.txt
+SR 
+DIU C
+sprin
+65_K1
+Line 
+Line
+administrator@administrator-VirtualBox:~/Downloads$ cut -d ' ' -f 2 sr.txt
+
+CSE
+2026
+65_K1
+
+Line
+administrator@administrator-VirtualBox:~/Downloads$ cut -d ' ' -f 1,2 sr.txt
+SR 
+DIU CSE
+spring 2026
+65_K1
+Line 
+Line
+administrator@administrator-VirtualBox:~/Downloads$ cat sr.txt
+SR 
+DIU CSE 65
+spring 2026
+65_K1
+Line 
+Line
+administrator@administrator-VirtualBox:~/Downloads$ cat sr.txt
+SR 
+DIU CSE 65
+spring 2026
+65_K1
+Line 
+Line
+administrator@administrator-VirtualBox:~/Downloads$ grep "S" sr.txt
+SR 
+DIU CSE 65
+administrator@administrator-VirtualBox:~/Downloads$ grep "^S" sr.txt
+SR 
+administrator@administrator-VirtualBox:~/Downloads$ grep "e$" sr.txt
+Line
+administrator@administrator-VirtualBox:~/Downloads$ grep 'in' sr.txt
+spring 2026
+Line 
+Line
+administrator@administrator-VirtualBox:~/Downloads$ grep -w 'Line' sr.txt
+Line 
+Line
+administrator@administrator-VirtualBox:~/Downloads$ grep '^CSE$' sr.txt
+administrator@administrator-VirtualBox:~/Downloads$ grep '^SR$' sr.txt
+administrator@administrator-VirtualBox:~/Downloads$ nano sr.txt
+Use "fg" to return to nano.
+
+[1]+  Stopped                 nano sr.txt
+administrator@administrator-VirtualBox:~/Downloads$ grep -i '^admin' sr.txt
+Admin
+Admin user
+admin user
+administrator@administrator-VirtualBox:~/Downloads$ cat sr.txt
+SR 
+DIU CSE 65
+spring 2026
+65_K1
+Line 1 
+Line 2
+Admin
+Admin user
+Asianpaints
+Acer
+Turbo Mode
+Turbo
+Thinkpad
+admin user
+
+administrator@administrator-VirtualBox:~/Downloads$ ls
+os.txt  sr.txt
+administrator@administrator-VirtualBox:~/Downloads$ ls > output.txt
+administrator@administrator-VirtualBox:~/Downloads$ cat sr.txt > output.txt
+administrator@administrator-VirtualBox:~/Downloads$ top
+
+administrator@administrator-VirtualBox:~/Downloads$ cat os.txt
+SR 
+DIU CSE 65
+spring 2026
+65_K1
+Line 
+Line
+administrator@administrator-VirtualBox:~/Downloads$ cat os.txt
+SR 
+DIU CSE 65
+spring 2026
+65_K1
+Line 
+Line
+administrator@administrator-VirtualBox:~/Downloads$ grep 'DIU' os.txt | cut -d ' ' -f 3
+65
+
+administrator@administrator-VirtualBox:~/Downloads$ ls -lh
+total 16K
+-rw-r--r-- 1 administrator administrator   3 জানু   24 14:35 new.txt
+-rw-r--r-- 1 administrator administrator  44 জানু   24 13:46 os.txt
+-rw-r--r-- 1 administrator administrator 120 জানু   24 14:24 output.txt
+-rw-r--r-- 1 administrator administrator 120 জানু   24 14:17 sr.txt
+administrator@administrator-VirtualBox:~/Downloads$ chmod u+x os.txt
+administrator@administrator-VirtualBox:~/Downloads$ ls -lh
+total 16K
+-rw-r--r-- 1 administrator administrator   3 জানু   24 14:35 new.txt
+-rwxr--r-- 1 administrator administrator  44 জানু   24 13:46 os.txt
+-rw-r--r-- 1 administrator administrator 120 জানু   24 14:24 output.txt
+-rw-r--r-- 1 administrator administrator 120 জানু   24 14:17 sr.txt
+
+administrator@administrator-VirtualBox:~/Downloads$ chmod u-rwx os.txt
+administrator@administrator-VirtualBox:~/Downloads$ ls -lh
+total 16K
+-rw-r--r-- 1 administrator administrator   3 জানু   24 14:35 new.txt
+----r--r-- 1 administrator administrator  44 জানু   24 13:46 os.txt
+-rw-r--r-- 1 administrator administrator 120 জানু   24 14:24 output.txt
+-rw-r--r-- 1 administrator administrator 120 জানু   24 14:17 sr.txt
+administrator@administrator-VirtualBox:~/Downloads$ chmod u+r os.txt
+administrator@administrator-VirtualBox:~/Downloads$ chmod u-r os.txt
+administrator@administrator-VirtualBox:~/Downloads$ chmod o-r os.txt
+administrator@administrator-VirtualBox:~/Downloads$ ls -lh
+total 16K
+-rw-r--r-- 1 administrator administrator   3 জানু   24 14:35 new.txt
+----r----- 1 administrator administrator  44 জানু   24 13:46 os.txt
+-rw-r--r-- 1 administrator administrator 120 জানু   24 14:24 output.txt
+-rw-r--r-- 1 administrator administrator 120 জানু   24 14:17 sr.txt
+administrator@administrator-VirtualBox:~/Downloads$ 
+
+
+administrator@administrator-VirtualBox:~/Downloads$ grep 'DIU' os.txt | cut -d ' ' -f 3 | cat > new.txt
+administrator@administrator-VirtualBox:~/Downloads$ 
